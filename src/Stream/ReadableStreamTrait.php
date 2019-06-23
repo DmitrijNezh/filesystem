@@ -99,6 +99,7 @@ trait ReadableStreamTrait
                 $this->readChunk();
             } else {
                 $this->emit('end', [$this]);
+                $this->emit('close', [$this]);
                 $this->close();
             }
         });
